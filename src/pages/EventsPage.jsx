@@ -1,12 +1,13 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { Heading, Box, Flex } from "@chakra-ui/react";
+import { Heading, Box, Flex, Input, FormControl, FormLabel } from "@chakra-ui/react";
 import { EventCard } from "../components/EventCard";
-import { useLoaderData } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export const EventsPage = () => {
   const [events, setEvents] = useState([]);
   const [categories, setCategories] = useState([]);
+  const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
     fetchEvents();
@@ -15,7 +16,6 @@ export const EventsPage = () => {
 
   const fetchEvents = async () => {
     const response = await fetch("http://localhost:3000/events");
-
     const eventsData = await response.json();
     setEvents(eventsData);
   };
@@ -26,6 +26,9 @@ export const EventsPage = () => {
     const categoryData = await response.json();
     setCategories(categoryData);
   };
+
+  const filteredEvents = events.filter((event) => event.title.toLowerCase().includes(searchQuery.toLowerCase()));
+
   return (
     <Box
       as={"main"}
@@ -36,17 +39,34 @@ export const EventsPage = () => {
       flexDirection={"column"}
       padding={"0 1rem 0 1rem"}>
       <Heading marginTop={"1rem"}>Event list for fun</Heading>
+
+      <Input
+        variant={"outline"}
+        borderColor={"black"}
+        backgroundColor={"gray.200"}
+        marginTop={"1rem"}
+        width={"sm"}
+        type="text"
+        name="search"
+        value={searchQuery}
+        onChange={(e) => setSearchQuery(e.target.value)}
+      />
+
       <Flex
         marginTop={"2rem"}
         height={"100%"}
-        width={"100%"}
+        maxWidth={"1100px"}
         flexWrap={"wrap"}
         gap={"1rem"}
         justifyContent={"center"}
         alignItems={"center"}>
         {events.length > 0 &&
           categories.length > 0 &&
-          events.map((event) => <EventCard key={event.id} event={event} categories={categories} />)}
+          filteredEvents.map((event) => (
+            <Link key={event.id} to={`/event/${event.id}`}>
+              <EventCard event={event} categories={categories} />
+            </Link>
+          ))}
       </Flex>
     </Box>
   );

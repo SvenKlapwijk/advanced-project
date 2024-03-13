@@ -27,13 +27,12 @@ export const EventCard = ({ event, categories }) => {
     });
   };
   const eventCategories = filterCategories(event.categoryIds);
-  console.log(eventCategories);
   return (
     <Card
-      height={"175px"}
-      width={"500px"}
+      height={{ base: "350px", lg: "175px" }}
+      width={{ base: "200px", lg: "500px" }}
       display={"flex"}
-      flexDirection={"row"}
+      flexDirection={{ base: "column", lg: "row" }}
       borderRadius={"lg"}
       overflow={"hidden"}>
       <CardHeader width={"200px"} padding={0}>
@@ -41,7 +40,7 @@ export const EventCard = ({ event, categories }) => {
           backgroundImage={`url(${event.image})`}
           backgroundSize="cover"
           backgroundPosition="center"
-          height="100%"></Box>
+          height={{ base: "100px", lg: "100%" }}></Box>
       </CardHeader>
       <CardBody
         display={"flex"}
