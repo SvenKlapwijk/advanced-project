@@ -327,7 +327,7 @@ export const EventPage = () => {
           </ModalFooter>
         </ModalContent>
       </Modal>
-      <Modal isOpen={isDeleteConfirmationOpen} onClose={onCloseDeleteConfirmation}>
+      <Modal isCentered isOpen={isDeleteConfirmationOpen} onClose={onCloseDeleteConfirmation}>
         <ModalOverlay />
         <ModalContent>
           <ModalHeader>Are you sure you want to delete?</ModalHeader>

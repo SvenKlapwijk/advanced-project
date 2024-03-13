@@ -62,7 +62,15 @@ export const NewEvent = () => {
     e.preventDefault();
     try {
       if (formData.categoryIds.length === 0) {
-        throw new Error("At least one category must be selected.");
+        throw new Error(
+          toast({
+            title: "An error occurred",
+            description: "Failed to create event select a category",
+            status: "error",
+            duration: 5000,
+            isClosable: true,
+          })
+        );
       }
 
       const response = await fetch("http://localhost:3000/events", {
