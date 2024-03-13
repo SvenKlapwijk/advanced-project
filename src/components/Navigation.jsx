@@ -9,10 +9,7 @@ export const Navigation = () => {
         <li>
           <Link to="/">Events</Link>
         </li>
-        <li>
-          <Link to="/event/1">Event</Link>
-        </li>
-        <li>
+        <li className="add-event">
           <Link to="/event/new">Add event</Link>
         </li>
       </ul>

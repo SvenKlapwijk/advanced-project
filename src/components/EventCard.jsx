@@ -16,7 +16,6 @@ export const EventCard = ({ event, categories }) => {
       hour12: false,
     };
 
-    // Format the timestamp into a user-friendly format
     return new Intl.DateTimeFormat("nl-NL", options).format(timestamp);
   }
   const startTime = formatTimestamp(event.startTime);

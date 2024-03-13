@@ -17,3 +17,9 @@
   font-size: 1.5rem;
   font-weight: 700;
 }
+
+.add-event {
+  background-color: pink;
+  padding: 0.5rem;
+  border-radius: 20px;
+}
