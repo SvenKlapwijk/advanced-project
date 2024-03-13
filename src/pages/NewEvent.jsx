@@ -81,7 +81,7 @@ export const NewEvent = () => {
           duration: 5000,
           isClosable: true,
         });
-
+        navigate("/");
         setFormData({
           id: Math.floor(Math.random() * 100000),
           createdBy: "",

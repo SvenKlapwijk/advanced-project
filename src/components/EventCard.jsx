@@ -3,6 +3,7 @@ import { Card, CardBody, CardHeader, Box, Heading, Text, Stack } from "@chakra-u
 
 export const EventCard = ({ event, categories }) => {
   // title, description, image, startTime & endTime, categories;
+
   function formatTimestamp(timestampStr) {
     const timestamp = new Date(timestampStr);
 
@@ -27,6 +28,7 @@ export const EventCard = ({ event, categories }) => {
     });
   };
   const eventCategories = filterCategories(event.categoryIds);
+
   return (
     <Card
       height={{ base: "350px", lg: "175px" }}

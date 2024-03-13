@@ -31,8 +31,8 @@
       "image": "https://www.ctvnews.ca/polopoly_fs/1.5118552.1600965663!/httpImage/image.jpg_gen/derivatives/landscape_1020/image.jpg",
       "categoryIds": [2],
       "location": "Blinded by the Lights Laser Tag, 15 Main St.",
-      "startTime": "2023-04-06T17:46",
-      "endTime": "2023-04-06T18:46"
+      "startTime": "2023-04-06T18:46",
+      "endTime": "2023-04-06T17:46"
     },
     {
       "id": 3,
@@ -50,7 +50,7 @@
       "createdBy": 2,
       "title": "Yoga",
       "description": "It's a bit of a stretch.",
-      "image": "https://ymcasouthflorida.org/wp-content/uploads/2019/12/AA2I8910-scaled.jpg",
+      "image": "https://s3.eu-west-2.amazonaws.com/ws-activestirling/production/Badminton/_1200x630_crop_center-center_none/Badminton-3.jpg",
       "categoryIds": [3],
       "location": "Shavasana Yoga School",
       "startTime": "2023-03-09T06:00:00.000Z",

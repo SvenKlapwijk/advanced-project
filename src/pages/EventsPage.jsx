@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { Heading, Box, Flex, Input, FormControl, FormLabel } from "@chakra-ui/react";
+import { Heading, Box, Flex, Input } from "@chakra-ui/react";
 import { EventCard } from "../components/EventCard";
 import { Link } from "react-router-dom";
 
@@ -28,7 +28,6 @@ export const EventsPage = () => {
   };
 
   const filteredEvents = events.filter((event) => event.title.toLowerCase().includes(searchQuery.toLowerCase()));
-
   return (
     <Box
       as={"main"}
