@@ -196,7 +196,7 @@ export const EventPage = () => {
       alignItems="center"
       flexDirection="column"
       justifyContent="center">
-      <Card minWidth={{ md: "800px" }} maxWidth={"800px"}>
+      <Card minWidth={{ base: "100%", md: "800px" }} maxWidth={"800px"}>
         <CardHeader padding={"0.75rem"}>
           <Box
             borderRadius={"lg"}
