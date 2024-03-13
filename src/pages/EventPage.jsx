@@ -165,6 +165,7 @@ export const EventPage = () => {
 
       if (response.ok) {
         onCloseDeleteConfirmation();
+        navigate("/");
         toast({
           title: "Event deleted",
           description: "Your event has been successfully deleted!",

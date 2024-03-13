@@ -14,7 +14,7 @@
   "events": [
     {
       "id": "48015",
-      "createdBy": "1",
+      "createdBy": "2",
       "title": "Event Test1",
       "description": "Event Test1",
       "image": "https://st2.depositphotos.com/1017986/7924/i/450/depositphotos_79249744-stock-photo-group-of-happy-friends-at.jpg",
@@ -55,18 +55,17 @@
       "endTime": "2024-03-04T23:02"
     },
     {
-      "id": "24159",
-      "createdBy": "1",
-      "title": "Event Test4",
+      "id": "47801",
+      "createdBy": "2",
+      "title": "Even Test4",
       "description": "Event Test4",
-      "image": "https://cdn.pixabay.com/photo/2016/11/23/15/48/audience-1853662_640.jpg",
+      "image": "https://upevents.nl/wp-content/blogs.dir/1/files/2020/09/up-events-beachclup-feest.jpg",
       "categoryIds": [
-        "1",
-        "3"
+        "1"
       ],
-      "location": "Straatnaam 106",
-      "startTime": "2024-03-17T23:03",
-      "endTime": "2024-03-18T23:03"
+      "location": "Straatnaam 1010",
+      "startTime": "2024-03-15T23:14",
+      "endTime": "2024-03-22T23:14"
     }
   ],
   "categories": [
