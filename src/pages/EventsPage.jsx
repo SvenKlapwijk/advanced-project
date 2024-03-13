@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { Heading, Box, Flex, Input } from "@chakra-ui/react";
+import { Heading, Box, Flex, Input, FormControl, FormLabel, Stack, Checkbox } from "@chakra-ui/react";
 import { EventCard } from "../components/EventCard";
 import { Link } from "react-router-dom";
 
@@ -8,6 +8,7 @@ export const EventsPage = () => {
   const [events, setEvents] = useState([]);
   const [categories, setCategories] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
+  const [selectedCategories, setSelectedCategories] = useState([]);
 
   useEffect(() => {
     fetchEvents();
@@ -27,7 +28,20 @@ export const EventsPage = () => {
     setCategories(categoryData);
   };
 
-  const filteredEvents = events.filter((event) => event.title.toLowerCase().includes(searchQuery.toLowerCase()));
+  const handleCategoryChange = (categoryId) => {
+    if (selectedCategories.includes(categoryId)) {
+      setSelectedCategories(selectedCategories.filter((id) => id !== categoryId));
+    } else {
+      setSelectedCategories([...selectedCategories, categoryId]);
+    }
+  };
+
+  const filteredEvents = events.filter(
+    (event) =>
+      (event.title.toLowerCase().includes(searchQuery.toLowerCase()) && selectedCategories.length === 0) ||
+      event.categoryIds.some((id) => selectedCategories.includes(id))
+  );
+
   return (
     <Box
       as={"main"}
@@ -50,6 +64,23 @@ export const EventsPage = () => {
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
       />
+
+      <FormControl display={"flex"} flexDirection={"column"} justifyContent={"center"} alignItems={"center"}>
+        <Stack width={"200px"} display={"flex"} alignItems={"flex-start"} spacing={2}>
+          <FormLabel>Filter by Category</FormLabel>
+          {categories.map((category) => (
+            <Checkbox
+              colorScheme={"red"}
+              display={"flex"}
+              justifyContent={"center"}
+              key={category.id}
+              isChecked={selectedCategories.includes(category.id)}
+              onChange={() => handleCategoryChange(category.id)}>
+              {category.name}
+            </Checkbox>
+          ))}
+        </Stack>
+      </FormControl>
 
       <Flex
         marginTop={"2rem"}
